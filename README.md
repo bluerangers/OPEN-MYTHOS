@@ -108,9 +108,12 @@ pip install torch
 ```
 
 **Ollama not starting**
-```bash
+```bash 
 # Linux
 sudo systemctl start ollama
+
+
+
 
 
 ## Overview
