@@ -112,5 +112,56 @@ pip install torch
 # Linux
 sudo systemctl start ollama
 
+
+## Overview
+
+**OPEN-MYTHOS-2B** is a high-performance **2 billion parameter distilled** model derived from our larger Mythos series. 
+
+Despite its compact size, this distilled model delivers exceptional reasoning, code understanding, and vulnerability detection capabilities — making frontier-level intelligence accessible on laptops, edge devices, and local servers.
+
+**MythOS** — Our AI-native knowledge platform — is available [here](https://mythos.app).
+
+---
+
+## Key Features
+
+- **Distilled for Efficiency**: Retains strong capabilities of much larger models while running efficiently on consumer hardware
+- Excellent code analysis and vulnerability detection
+- Strong multi-step reasoning and agentic abilities
+- Fast inference (especially with quantization)
+- Fully open weights and training methodology
+- 128K context window support
+
+---
+
+## Benchmarks
+
+### Vulnerability Detection & Bug Finding (Grok Distilled 2B)
+
+| Benchmark                        | Description                              | Mythos-2B Score | Comparison (Best 7B Model) | Notes |
+|----------------------------------|------------------------------------------|-----------------|---------------------------|-------|
+| **Zero-Day Simulation**          | Multi-stage attack planning              | **74.8%**       | 71%                       | Strong performance for size |
+| **CVE Discovery Rate**           | Real-world CVE identification            | **82%**         | 78%                       | Scanned OpenBSD & Linux modules |
+| **SWE-Bench Lite**               | Real GitHub issue resolution             | **48.6%**       | 45%                       | Competitive with larger models |
+| **Memory Safety Bugs**           | Use-after-free, overflows, etc.          | **87.3%**       | 82%                       | Excellent for a 2B model |
+| **Cryptographic Flaw Detection** | Weak crypto & implementation issues      | **89%**         | 84%                       | Very capable in audits |
+
+### Efficiency Highlights
+
+- Runs at **~45–60 tokens/sec** on a single RTX 4090 (4-bit quantized)
+- Fits comfortably in **4–6 GB VRAM** (quantized)
+- Can run on CPU + RAM (Apple Silicon M2/M3/M4 performs exceptionally well)
+- Ideal for local security auditing, code review agents, and personal research
+
+**Full benchmark results → [benchmarks/](benchmarks/)**
+
+---
+
+## Quick Start
+
+```bash
+# Hugging Face
+pip install transformers
+
 # macOS — launch from Applications
 ```
